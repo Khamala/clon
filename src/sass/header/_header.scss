@@ -1,0 +1,357 @@
+.header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-buy {
+  width: 152px;
+  height: 42px;
+
+  background: #f8d24e;
+  border-radius: 10px;
+}
+
+.button-buy::after {
+  content: url(../images/about/icon-modal-btn.png);
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 7px;
+  transition: color $default-transition-time $default-transition-function;
+}
+
+.button-buy:hover {
+  background-color: #0a8817;
+}
+
+.button-buy:focus {
+  color: #fcfcfc;
+  background-color: #0a8817;
+  &::after {
+    content: url(../images/about/icon-modal-button-white.svg);
+  }
+}
+
+.button-buy:disabled {
+  background-color: #ababab;
+}
+
+.mobile-menu__icon-close {
+  fill: white;
+}
+
+@media screen and (max-width: 767px) {
+  .header-container {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    width: 40.47px;
+    height: 37px;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .button-menu {
+    top: 15px;
+    right: 15px;
+    display: inline-flex;
+    padding: 0;
+    line-height: 0;
+    margin-right: 0;
+    border: none;
+    // color: white;
+
+    background-color: transparent;
+  }
+
+  .mobile-menu__container {
+    display: none;
+  }
+
+  .button-buy {
+    display: none;
+  }
+}
+
+// tablet
+
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding: 20px 32px;
+  }
+
+  .logo {
+    width: 48px;
+    height: 44px;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .mobile-menu__container {
+    display: none;
+  }
+
+  .button-menu {
+    display: inline-flex;
+    padding: 0;
+    line-height: 0;
+    margin-left: auto;
+    margin-right: 32px;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+// desktop
+@media screen and (min-width: 1200px) {
+  .header-container {
+    padding: 8px 16px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 65px;
+  }
+
+  .button-menu {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+
+    //   margin-left: 269px;
+    //   margin-right: 247px;
+  }
+
+  .header-link {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .header-item + .header-item {
+    margin-left: 27px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+// mobile-menu
+
+@media screen and (max-width: 767px) {
+  .button-buy-menu {
+    display: flex;
+    margin-top: 111px;
+  }
+  .button-buy-menu:hover {
+    background-color: #0a8817;
+  }
+
+  .button-buy-menu:focus {
+    color: #fcfcfc;
+    background-color: #0a8817;
+    &::after {
+      content: url(../images/about/icon-modal-button-white.svg);
+    }
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    padding: 0;
+
+    background-color: #84a178;
+    transition: opacity $default-transition-time $default-transition-function,
+      visibility $default-transition-time $default-transition-function;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 1000ms;
+    transform: translateX(0);
+    overflow: scroll;
+  }
+
+  .mobile-menu__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    padding: 100px 22px 63px 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-menu {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+  }
+
+  .mobile-menu__button-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    padding: 0;
+    line-height: 0;
+
+    background-color: transparent;
+    border: none;
+    color: white;
+
+    transition: color $default-transition-time $default-transition-function;
+
+    &:hover,
+    &:focus {
+      color: black;
+      fill: currentColor;
+    }
+  }
+
+  .mobile-menu__link {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.22;
+    color: #fcfcfc;
+    transition: color $default-transition-time $default-transition-function;
+
+    &:hover,
+    &:focus {
+      color: black;
+    }
+
+    &.current {
+      color: black;
+    }
+  }
+
+  .mobile-menu__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button-buy-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    padding: 0;
+
+    background-color: #84a178;
+    transform: translateX(200%);
+    transition: transform 1200ms;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 1000ms;
+    transform: translateX(0);
+    overflow: scroll;
+  }
+
+  .mobile-menu__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    padding: 140px 179px 528px 180px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo-menu {
+    position: absolute;
+    top: 20px;
+    left: 32px;
+  }
+
+  .mobile-menu__button-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    padding: 0;
+    line-height: 0;
+
+    background-color: transparent;
+    border: none;
+    color: white;
+
+    transition: color $default-transition-time $default-transition-function;
+
+    &:hover,
+    &:focus {
+      color: black;
+      fill: currentColor;
+    }
+  }
+
+  .mobile-menu__link {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.23;
+
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
+
+    color: #fcfcfc;
+
+    transition: color $default-transition-time $default-transition-function;
+
+    &:hover,
+    &:focus {
+      color: black;
+    }
+
+    &.current {
+      color: black;
+    }
+  }
+
+  .mobile-menu__item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,61 @@
+<div class="modal-default-backdrop locations-modal__is-hidden" data-locations-modal>
+  
+  <div class="modal-locations">
+  
+    <button
+      type="button"
+      class="modal-locations_close-button"
+      data-locations-modal-close
+    >
+      <svg class="modal-locations_icon-close svg" width="16" height="16">
+        <use href="./images/sprite.svg#icon-modal-close-icon"></use>
+      </svg>
+    </button>
+
+    <form class="modal-locations_form">
+      <p class="modal-locations_form_title">Our Locations</p>
+      <a
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        href="https://goo.gl/maps/6sFeNcmGMRV9s5nJ6"
+        class="modal-locations_img-link link"
+      >
+        <picture>
+          <source
+            srcset="
+              ./images/contacts/location@1x-tablet.jpg 1x,
+              ./images/contacts/location@2x-tablet.jpg 2x
+            "
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="
+              ./images/contacts/location@1x-tablet.jpg 1x,
+              ./images/contacts/location@2x-tablet.jpg 2x
+            "
+            media="(min-width: 768px)"
+          />
+          <source
+            srcset="
+              ./images/contacts/location@1x-mobile.jpg 1x,
+              ./images/contacts/location@2x-mobile.jpg 2x
+            "
+            media="(max-width: 767px)"
+          />
+          <img
+            class="modal-locations_img"
+            src="./images/contacts/location@1x-mobile.jpg"
+            alt="Location"
+          />
+        </picture>
+      </a>
+      <a
+        href="https://goo.gl/maps/6sFeNcmGMRV9s5nJ6"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="modal-locations_link link"
+        >Open map</a
+      >
+    </form>
+  </div>
+</div>
